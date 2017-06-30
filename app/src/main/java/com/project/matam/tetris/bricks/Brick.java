@@ -55,6 +55,9 @@ public abstract class Brick implements Movement {
         this.brickManager = new BrickManager(null);
     }
 
+    /**
+     * Differentes fonctions pour les mouvements
+     */
     public void down(){
         this.mPos_y = this.mPos_y+1;
     }
@@ -71,6 +74,11 @@ public abstract class Brick implements Movement {
         return null;
     }
 
+    /**
+     * Verifie si le mouvement est possible
+     * @param gameMatrix
+     * @return
+     */
     public boolean validRotate(int[][] gameMatrix){
         boolean success = false;
         if(mPos_x+mHeight-1 <= 9 && mPos_y+mWitdh-1 <= 19)
