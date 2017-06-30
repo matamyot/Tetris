@@ -33,12 +33,12 @@ public class Brick_Z extends Brick {
         Brick brick_rotate = new Brick_Z(this.mPos_x,this.mPos_y);
         if(Arrays.deepEquals(this.mMatrix,rotA))
         {
-            brick_rotate.setmMatrix(rotA);
+            brick_rotate.setMatrix(rotA);
             brick_rotate.rotate();
         }
         else if(Arrays.deepEquals(this.mMatrix,rotB))
         {
-            brick_rotate.setmMatrix(rotB);
+            brick_rotate.setMatrix(rotB);
             brick_rotate.rotate();
         }
         return brick_rotate;

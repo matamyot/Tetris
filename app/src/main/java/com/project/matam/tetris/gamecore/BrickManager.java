@@ -20,6 +20,13 @@ public class BrickManager {
         this.gameMatrix = gameMatrix;
     }
 
+    /**
+     * Fonction qui va regarder si on peut ajouter une piece dans la grille au position de la piece
+     * Si l'ajout ne réussi pas totalement pour chaque emplacement 1 de la matrice de la piece
+     * on retourne faux
+     * @param brick
+     * @return un booleen qui indique la reussite de l'ajout
+     */
     public boolean addBrick(Brick brick)
     {
         int [][] gameMatrix = this.gameMatrix;
@@ -43,7 +50,7 @@ public class BrickManager {
                     success = true;
                     gameMatrix[y][x] = brick.getMatrix()[brickY][brickX];
                 }
-                else if(brick.getMatrix()[brickY][brickX] == 1 && gameMatrix[y][x] == 1)
+                else if(brick.getMatrix()[brickY][brickX] == 1 && gameMatrix[y][x] == 1)//
                 {
                     success = false;
                 }
@@ -67,6 +74,10 @@ public class BrickManager {
         return success;
     }
 
+    /**
+     * On retire la piece du jeu en regardant pas à pas la matrice de la piece
+     * @param brick
+     */
     public void removeBrick(Brick brick)
     {
         int brickX = -1;
@@ -78,6 +89,10 @@ public class BrickManager {
             for(int x = brick.getX(); x < maxX; x++)
             {
                 brickX++;
+
+                //*****************************************************
+                //On enleve que si la matrice de la piece contient un 1
+                //pour ne pas enlever de piece autre que la piece courante
                 if(brick.getMatrix()[brickY][brickX] == 1)
                 {
                     this.gameMatrix[y][x] = 0;
@@ -88,6 +103,13 @@ public class BrickManager {
     }
 
     int lineToErase;
+
+    /**
+     * Fonction qui verifie qu'une ligne est complete et indique la ligne a supprimer
+     * @param row
+     * @param col
+     * @return
+     */
     public boolean checkLine(int row, int col)
     {
         boolean fullLine = false;
@@ -96,7 +118,7 @@ public class BrickManager {
         {
             int cpt = 0;
             for(int x = 0; x < col; x++){
-                if(this.gameMatrix[y][x] == 1)//if(this.gameMatrix[y][x] == 1)
+                if(this.gameMatrix[y][x] == 1)
                 {
                     cpt++;
                 }
@@ -116,6 +138,10 @@ public class BrickManager {
         return fullLine;
     }
 
+    /**
+     * Descend la matrice d'un cran à partir de la ligne à enlever
+     * @param col
+     */
     public void downAll(int col){
         for (int y = lineToErase; y>0; y--){
             for(int x = 0; x<col; x++){

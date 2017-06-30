@@ -32,22 +32,22 @@ public class Brick_T extends Brick {
         Brick brick_rotate = new Brick_T(this.mPos_x,this.mPos_y);
         if(Arrays.deepEquals(this.mMatrix,rotA))
         {
-            brick_rotate.setmMatrix(rotA);
+            brick_rotate.setMatrix(rotA);
             brick_rotate.rotate();
         }
         else if(Arrays.deepEquals(this.mMatrix,rotB))
         {
-            brick_rotate.setmMatrix(rotB);
+            brick_rotate.setMatrix(rotB);
             brick_rotate.rotate();
         }
         else if(Arrays.deepEquals(this.mMatrix,rotC))
         {
-            brick_rotate.setmMatrix(rotC);
+            brick_rotate.setMatrix(rotC);
             brick_rotate.rotate();
         }
         else if(Arrays.deepEquals(this.mMatrix,rotD))
         {
-            brick_rotate.setmMatrix(rotD);
+            brick_rotate.setMatrix(rotD);
             brick_rotate.rotate();
         }
         return brick_rotate;

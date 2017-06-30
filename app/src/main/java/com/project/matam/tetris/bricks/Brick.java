@@ -9,6 +9,7 @@ import java.util.Arrays;
  */
 
 public abstract class Brick implements Movement {
+
     public int getHeight() {
         return mHeight;
     }
@@ -21,7 +22,7 @@ public abstract class Brick implements Movement {
         return mMatrix;
     }
 
-    public void setmMatrix(int[][] mMatrix) {
+    public void setMatrix(int[][] mMatrix) {
         this.mMatrix = mMatrix;
     }
 
